@@ -28,3 +28,15 @@ a = masculinos['Height']
 p = masculinos['Weight']
 plt.scatter(a,p)
 plt.show()
+
+dados2 = dados.dropna()
+enulo = dados.isnull()
+faltantes = dados.isnull().sum()
+fat_perc = (dados.isnull().sum() / len(dados['ID']))*100
+
+dados['Metal'].fillna('Nenhuma', inplace = True)
+
+--------------------------------------------------------------------------
+
+import pandas as pd
+arq = pd.read_csv('C:/Users/thelsandro/Documents/GitHub/codigos_python/machine/wine_dataset.csv')
