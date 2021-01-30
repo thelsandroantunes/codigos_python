@@ -9,3 +9,22 @@ dados.dtypes
 
 dados.hist(colums='Age', bins=10)
 plt.show()
+
+dados.boxplot(column=['Age','Weight','Height'])
+plt.show()
+
+dados.loc[0:9]
+dados.rename(columns={'Name':'Nome','Sex':'Sexo','Age':'Idade'}, inplace=True)
+dados.shape
+
+plt.scatter(x,y)
+plt.show()
+
+x1 = np.arange(0,1000,1)
+plt.plot(x1,x1**2)
+
+masculinos = dados.loc[dados['Sex']=='M']
+a = masculinos['Height']
+p = masculinos['Weight']
+plt.scatter(a,p)
+plt.show()
