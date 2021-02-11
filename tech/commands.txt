@@ -40,3 +40,43 @@ dados['Metal'].fillna('Nenhuma', inplace = True)
 
 import pandas as pd
 arq = pd.read_csv('C:/Users/thelsandro/Documents/GitHub/codigos_python/machine/wine_dataset.csv')
+
+for user in userAut:
+    filtAut = (copyAut['usuario'] == user)
+    vendAut['usuario'].append(user)
+    vendAut['nome'].appen(copyAut.nome)
+    vendAut['venda_total'].append(autazes[filtAut].valor_compra.sum().astype(float).round(2))
+
+
+////////////////////////////
+
+vp = [ (userAut[0], copyAut['nome'][0], autazes[copyAut['usuario'] == userAut[0]].valor_compra.sum().astype(float).round(2) )]
+vendAut = pd.DataFrame(vp, columns = ['usuario','nome','venda_total'])
+
+count = 1
+for user in userAut:
+    if count == 0:
+        count
+    else:
+        filtAut = (copyAut['usuario'] == user)
+        vl_total = autazes[filtAut].valor_compra.sum().astype(float).round(2)
+        nvp = [(user, copyAut['nome'], vl_total)]
+        dfNew = pd.DataFrame(nvp, columns = ['usuario','nome','venda_total'])
+        vendAut=vendAut.append(dfNew,ignore_index=True)
+        count+=1
+
+
+nvp = [(user, x.usuario)]
+            dfNew = pd.DataFrame(nvp, columns = ['usuario','nome'])  
+            unAut = unAut.append(dfNew,ignore_index=True)
+
+
+
+for user in userAut:
+    for idx, x in copyAut.iterrows():
+        if user == x.usuario:
+            
+            nvp = [(user, x.nome)]
+            dfNew = pd.DataFrame(nvp, columns = ['usuario','nome'])  
+            unAut = unAut.append(dfNew,ignore_index=True)
+            break
